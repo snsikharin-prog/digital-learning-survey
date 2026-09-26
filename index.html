@@ -1,0 +1,3748 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    แบบสอบถามความพร้อม สภาพการใช้งาน และความพึงพอใจต่อเครื่องมือดิจิทัลเพื่อการเรียนรู้
+  </title>
+
+
+  <style>
+
+    /* =====================================================
+       FONT
+       ===================================================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      font-family:
+        "TH SarabunPSK",
+        "TH Sarabun New",
+        "Sarabun",
+        sans-serif;
+
+      font-size: 20px;
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(59,130,246,0.14),
+          transparent 35%
+        ),
+
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(168,85,247,0.14),
+          transparent 35%
+        ),
+
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(236,72,153,0.12),
+          transparent 40%
+        ),
+
+        #f8fafc;
+
+      color: #1e293b;
+
+      line-height: 1.7;
+
+      min-height: 100vh;
+    }
+
+
+    /* =====================================================
+       COLOR VARIABLES
+       ===================================================== */
+
+    :root {
+
+      --blue:
+        #2563eb;
+
+      --blue-dark:
+        #172554;
+
+      --blue-light:
+        #dbeafe;
+
+      --yellow:
+        #facc15;
+
+      --yellow-light:
+        #fef9c3;
+
+      --purple:
+        #9333ea;
+
+      --purple-light:
+        #f3e8ff;
+
+      --pink:
+        #ec4899;
+
+      --pink-light:
+        #fce7f3;
+
+      --surface:
+        #ffffff;
+
+      --text:
+        #172033;
+
+      --muted:
+        #64748b;
+
+      --border:
+        #dbe2ea;
+
+      --danger:
+        #dc2626;
+
+      --success:
+        #16a34a;
+    }
+
+
+    /* =====================================================
+       PROGRESS
+       ===================================================== */
+
+    .progress-dock {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+      background:
+        rgba(255,255,255,0.94);
+
+      backdrop-filter:
+        blur(16px);
+
+      border-bottom:
+        2px solid #e2e8f0;
+
+      box-shadow:
+        0 4px 15px rgba(15,23,42,0.08);
+
+      padding:
+        12px 18px;
+    }
+
+
+    .progress-content {
+
+      max-width: 960px;
+
+      margin:
+        auto;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        15px;
+    }
+
+
+    .progress-label {
+
+      min-width:
+        185px;
+
+      font-size:
+        19px;
+
+      font-weight:
+        700;
+
+      color:
+        var(--blue-dark);
+    }
+
+
+    .progress-track {
+
+      flex:
+        1;
+
+      height:
+        12px;
+
+      background:
+        #e2e8f0;
+
+      border-radius:
+        999px;
+
+      overflow:
+        hidden;
+    }
+
+
+    .progress-fill {
+
+      height:
+        100%;
+
+      width:
+        0%;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--purple),
+          var(--pink)
+        );
+
+      transition:
+        width .35s ease;
+    }
+
+
+    /* =====================================================
+       MAIN
+       ===================================================== */
+
+    .container {
+
+      max-width:
+        960px;
+
+      margin:
+        28px auto 60px;
+
+      padding:
+        0 16px;
+    }
+
+
+    /* =====================================================
+       BANNER
+       ===================================================== */
+
+    .banner {
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #172554 0%,
+          #1d4ed8 45%,
+          #7e22ce 75%,
+          #db2777 100%
+        );
+
+      color:
+        white;
+
+      border-radius:
+        24px;
+
+      padding:
+        42px 38px;
+
+      margin-bottom:
+        24px;
+
+      box-shadow:
+        0 20px 40px rgba(37,99,235,.25);
+    }
+
+
+    .banner::before {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        220px;
+
+      height:
+        220px;
+
+      background:
+        rgba(250,204,21,.22);
+
+      border-radius:
+        50%;
+
+      right:
+        -70px;
+
+      top:
+        -80px;
+    }
+
+
+    .banner::after {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        170px;
+
+      height:
+        170px;
+
+      background:
+        rgba(236,72,153,.20);
+
+      border-radius:
+        50%;
+
+      left:
+        -60px;
+
+      bottom:
+        -80px;
+    }
+
+
+    .institution {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      color:
+        #fde68a;
+
+      font-weight:
+        700;
+
+      font-size:
+        23px;
+
+      margin-bottom:
+        8px;
+    }
+
+
+    .banner h1 {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      font-size:
+        clamp(27px,4vw,38px);
+
+      line-height:
+        1.3;
+
+      margin-bottom:
+        14px;
+
+      color:
+        #ffffff;
+    }
+
+
+    .banner .desc {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      font-size:
+        19px;
+
+      color:
+        #f8fafc;
+
+      line-height:
+        1.65;
+    }
+
+
+    /* =====================================================
+       STEP INDICATOR
+       ===================================================== */
+
+    .step-navigation {
+
+      background:
+        #ffffff;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        18px;
+
+      padding:
+        18px;
+
+      margin-bottom:
+        22px;
+
+      box-shadow:
+        0 8px 20px rgba(15,23,42,.06);
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap:
+        10px;
+    }
+
+
+    .step-item {
+
+      position:
+        relative;
+
+      border:
+        2px solid #e2e8f0;
+
+      border-radius:
+        14px;
+
+      padding:
+        12px 8px;
+
+      text-align:
+        center;
+
+      background:
+        #ffffff;
+
+      color:
+        #64748b;
+
+      font-weight:
+        700;
+
+      cursor:
+        default;
+
+      transition:
+        .25s ease;
+    }
+
+
+    .step-number {
+
+      display:
+        flex;
+
+      width:
+        34px;
+
+      height:
+        34px;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      margin:
+        0 auto 4px;
+
+      border-radius:
+        50%;
+
+      background:
+        #e2e8f0;
+
+      color:
+        #475569;
+
+      font-size:
+        18px;
+    }
+
+
+    .step-item.active {
+
+      border-color:
+        var(--blue);
+
+      background:
+        var(--blue-light);
+
+      color:
+        var(--blue-dark);
+    }
+
+
+    .step-item.active .step-number {
+
+      background:
+        var(--blue);
+
+      color:
+        white;
+    }
+
+
+    .step-item.completed {
+
+      border-color:
+        var(--purple);
+
+      background:
+        var(--purple-light);
+
+      color:
+        #581c87;
+    }
+
+
+    .step-item.completed .step-number {
+
+      background:
+        var(--purple);
+
+      color:
+        white;
+    }
+
+
+    /* =====================================================
+       CARD
+       ===================================================== */
+
+    .card {
+
+      display:
+        none;
+
+      background:
+        var(--surface);
+
+      border:
+        1.5px solid var(--border);
+
+      border-radius:
+        20px;
+
+      padding:
+        32px;
+
+      margin-bottom:
+        22px;
+
+      box-shadow:
+        0 10px 28px rgba(15,23,42,.08);
+
+      animation:
+        slideIn .3s ease;
+    }
+
+
+    .card.active {
+
+      display:
+        block;
+    }
+
+
+    @keyframes slideIn {
+
+      from {
+        opacity: 0;
+        transform:
+          translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateY(0);
+      }
+    }
+
+
+    .card-header {
+
+      border-bottom:
+        2px solid #f1f5f9;
+
+      padding-bottom:
+        16px;
+
+      margin-bottom:
+        22px;
+    }
+
+
+    .badge {
+
+      display:
+        inline-flex;
+
+      padding:
+        5px 14px;
+
+      border-radius:
+        999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--purple)
+        );
+
+      color:
+        white;
+
+      font-size:
+        18px;
+
+      font-weight:
+        700;
+
+      margin-bottom:
+        8px;
+    }
+
+
+    .card-title {
+
+      font-size:
+        28px;
+
+      font-weight:
+        700;
+
+      color:
+        var(--blue-dark);
+
+      line-height:
+        1.35;
+
+      margin-bottom:
+        4px;
+    }
+
+
+    .card-subtitle {
+
+      color:
+        var(--muted);
+
+      font-size:
+        19px;
+
+      font-weight:
+        500;
+    }
+
+
+    /* =====================================================
+       FORM
+       ===================================================== */
+
+    .form-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+      gap:
+        20px;
+    }
+
+
+    .form-group {
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      gap:
+        6px;
+    }
+
+
+    .full-width {
+
+      grid-column:
+        1 / -1;
+    }
+
+
+    .form-label {
+
+      font-size:
+        20px;
+
+      font-weight:
+        700;
+
+      color:
+        var(--text);
+    }
+
+
+    select {
+
+      width:
+        100%;
+
+      padding:
+        10px 14px;
+
+      border:
+        2px solid #cbd5e1;
+
+      border-radius:
+        10px;
+
+      background:
+        white;
+
+      color:
+        #172033;
+
+      font-family:
+        inherit;
+
+      font-size:
+        19px;
+
+      outline:
+        none;
+
+      transition:
+        .2s;
+    }
+
+
+    select:focus {
+
+      border-color:
+        var(--blue);
+
+      box-shadow:
+        0 0 0 4px rgba(37,99,235,.13);
+    }
+
+
+    /* =====================================================
+       CHECKBOX
+       ===================================================== */
+
+    .checkbox-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap:
+        12px;
+    }
+
+
+    .checkbox-item {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        10px;
+
+      padding:
+        12px 14px;
+
+      border:
+        2px solid #e2e8f0;
+
+      border-radius:
+        10px;
+
+      background:
+        #ffffff;
+
+      cursor:
+        pointer;
+
+      transition:
+        .2s;
+
+      font-size:
+        18px;
+    }
+
+
+    .checkbox-item:hover {
+
+      border-color:
+        var(--purple);
+
+      background:
+        var(--purple-light);
+    }
+
+
+    .checkbox-item input {
+
+      width:
+        20px;
+
+      height:
+        20px;
+
+      accent-color:
+        var(--purple);
+    }
+
+
+    /* =====================================================
+       RUBRIC
+       ===================================================== */
+
+    .rubric-box {
+
+      background:
+        linear-gradient(
+          135deg,
+          #eff6ff,
+          #f5f3ff,
+          #fdf2f8
+        );
+
+      border:
+        2px solid #c7d2fe;
+
+      border-radius:
+        14px;
+
+      padding:
+        18px;
+
+      margin-bottom:
+        20px;
+    }
+
+
+    .rubric-title {
+
+      font-weight:
+        700;
+
+      color:
+        var(--blue-dark);
+
+      margin-bottom:
+        10px;
+
+      font-size:
+        20px;
+    }
+
+
+    .rubric-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap:
+        8px;
+    }
+
+
+    .rubric-col {
+
+      background:
+        white;
+
+      border:
+        1.5px solid #cbd5e1;
+
+      border-radius:
+        9px;
+
+      text-align:
+        center;
+
+      padding:
+        9px 5px;
+
+      font-size:
+        17px;
+
+      line-height:
+        1.35;
+    }
+
+
+    .rubric-col strong {
+
+      display:
+        block;
+
+      font-size:
+        24px;
+
+      color:
+        var(--purple);
+
+      margin-bottom:
+        3px;
+    }
+
+
+    .rubric-footer {
+
+      margin-top:
+        10px;
+
+      font-size:
+        17px;
+
+      color:
+        #475569;
+
+      text-align:
+        center;
+    }
+
+
+    /* =====================================================
+       QUESTIONS
+       ===================================================== */
+
+    .question-row {
+
+      padding:
+        22px 0;
+
+      border-top:
+        2px solid #eef2f7;
+    }
+
+
+    .question-row:first-of-type {
+
+      border-top:
+        none;
+
+      padding-top:
+        5px;
+    }
+
+
+    .question-stem {
+
+      font-size:
+        21px;
+
+      font-weight:
+        700;
+
+      color:
+        #172033;
+
+      margin-bottom:
+        14px;
+
+      line-height:
+        1.55;
+    }
+
+
+    .scale-choices {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap:
+        9px;
+    }
+
+
+    .scale-choice {
+
+      position:
+        relative;
+    }
+
+
+    .scale-choice input {
+
+      position:
+        absolute;
+
+      opacity:
+        0;
+    }
+
+
+    .scale-choice label {
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      min-height:
+        76px;
+
+      border:
+        2px solid #cbd5e1;
+
+      border-radius:
+        10px;
+
+      background:
+        white;
+
+      cursor:
+        pointer;
+
+      transition:
+        .2s;
+
+      text-align:
+        center;
+    }
+
+
+    .scale-choice label:hover {
+
+      border-color:
+        var(--pink);
+
+      background:
+        var(--pink-light);
+    }
+
+
+    .scale-score {
+
+      font-size:
+        27px;
+
+      font-weight:
+        700;
+
+      color:
+        #475569;
+    }
+
+
+    .scale-desc {
+
+      font-size:
+        16px;
+
+      color:
+        #64748b;
+
+      line-height:
+        1.2;
+    }
+
+
+    .scale-choice input:checked + label {
+
+      border-color:
+        var(--purple);
+
+      background:
+        linear-gradient(
+          135deg,
+          #f3e8ff,
+          #fce7f3
+        );
+
+      box-shadow:
+        0 0 0 4px rgba(147,51,234,.13);
+    }
+
+
+    .scale-choice input:checked + label .scale-score {
+
+      color:
+        var(--purple);
+    }
+
+
+    /* =====================================================
+       NAVIGATION BUTTON
+       ===================================================== */
+
+    .navigation-buttons {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      gap:
+        15px;
+
+      margin-top:
+        25px;
+
+      padding-top:
+        20px;
+
+      border-top:
+        2px solid #f1f5f9;
+    }
+
+
+    .btn {
+
+      border:
+        none;
+
+      border-radius:
+        12px;
+
+      padding:
+        12px 30px;
+
+      font-family:
+        inherit;
+
+      font-size:
+        21px;
+
+      font-weight:
+        700;
+
+      cursor:
+        pointer;
+
+      transition:
+        .2s;
+    }
+
+
+    .btn:hover {
+
+      transform:
+        translateY(-2px);
+    }
+
+
+    .btn-prev {
+
+      background:
+        #e2e8f0;
+
+      color:
+        #334155;
+    }
+
+
+    .btn-next {
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--purple)
+        );
+
+      color:
+        white;
+
+      box-shadow:
+        0 6px 15px rgba(37,99,235,.25);
+    }
+
+
+    .btn-submit {
+
+      width:
+        100%;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--purple),
+          var(--pink)
+        );
+
+      color:
+        white;
+
+      box-shadow:
+        0 8px 20px rgba(147,51,234,.25);
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .footer {
+
+      background:
+        white;
+
+      border:
+        1.5px solid var(--border);
+
+      border-radius:
+        18px;
+
+      padding:
+        30px 20px;
+
+      text-align:
+        center;
+
+      color:
+        #64748b;
+
+      font-size:
+        18px;
+
+      box-shadow:
+        0 8px 20px rgba(15,23,42,.06);
+    }
+
+
+    .footer .title {
+
+      color:
+        var(--blue-dark);
+
+      font-size:
+        21px;
+
+      font-weight:
+        700;
+
+      margin-bottom:
+        5px;
+    }
+
+
+    .academic-credit {
+
+      margin-top:
+        14px;
+
+      padding-top:
+        14px;
+
+      border-top:
+        2px dashed #cbd5e1;
+    }
+
+
+    .author-name {
+
+      display:
+        block;
+
+      color:
+        #334155;
+
+      font-weight:
+        600;
+
+      margin-top:
+        3px;
+    }
+
+
+    /* =====================================================
+       MODAL
+       ===================================================== */
+
+    .modal-overlay {
+
+      position:
+        fixed;
+
+      inset:
+        0;
+
+      z-index:
+        999;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        20px;
+
+      background:
+        rgba(15,23,42,.68);
+
+      backdrop-filter:
+        blur(8px);
+
+      opacity:
+        0;
+
+      visibility:
+        hidden;
+
+      transition:
+        .25s;
+    }
+
+
+    .modal-overlay.active {
+
+      opacity:
+        1;
+
+      visibility:
+        visible;
+    }
+
+
+    .modal-dialog {
+
+      width:
+        100%;
+
+      max-width:
+        470px;
+
+      background:
+        white;
+
+      border-radius:
+        22px;
+
+      padding:
+        32px 26px;
+
+      text-align:
+        center;
+
+      box-shadow:
+        0 25px 60px rgba(15,23,42,.25);
+
+      transform:
+        scale(.92);
+
+      transition:
+        .25s;
+    }
+
+
+    .modal-overlay.active .modal-dialog {
+
+      transform:
+        scale(1);
+    }
+
+
+    .modal-icon-container {
+
+      width:
+        68px;
+
+      height:
+        68px;
+
+      border-radius:
+        50%;
+
+      margin:
+        0 auto 15px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      font-size:
+        34px;
+
+      font-weight:
+        700;
+    }
+
+
+    .modal-icon-container.loading {
+
+      background:
+        var(--blue-light);
+
+      color:
+        var(--blue);
+
+      animation:
+        pulse 1.3s infinite;
+    }
+
+
+    .modal-icon-container.success {
+
+      background:
+        #dcfce7;
+
+      color:
+        var(--success);
+    }
+
+
+    .modal-icon-container.error {
+
+      background:
+        #fee2e2;
+
+      color:
+        var(--danger);
+    }
+
+
+    @keyframes pulse {
+
+      50% {
+        transform:
+          scale(1.08);
+
+        opacity:
+          .7;
+      }
+    }
+
+
+    .modal-title {
+
+      font-size:
+        25px;
+
+      font-weight:
+        700;
+
+      color:
+        #172033;
+
+      margin-bottom:
+        8px;
+    }
+
+
+    .modal-message {
+
+      font-size:
+        19px;
+
+      color:
+        #475569;
+
+      line-height:
+        1.6;
+
+      margin-bottom:
+        20px;
+    }
+
+
+    .countdown-tag {
+
+      display:
+        inline-block;
+
+      background:
+        #f1f5f9;
+
+      border-radius:
+        999px;
+
+      padding:
+        4px 12px;
+
+      font-size:
+        17px;
+
+      color:
+        #475569;
+
+      margin-bottom:
+        18px;
+    }
+
+
+    .btn-modal {
+
+      min-width:
+        150px;
+
+      border:
+        none;
+
+      border-radius:
+        10px;
+
+      background:
+        var(--blue);
+
+      color:
+        white;
+
+      padding:
+        10px 25px;
+
+      font-family:
+        inherit;
+
+      font-size:
+        20px;
+
+      font-weight:
+        700;
+
+      cursor:
+        pointer;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 768px) {
+
+      body {
+        font-size:
+          18px;
+      }
+
+
+      .progress-content {
+        gap:
+          8px;
+      }
+
+
+      .progress-label {
+        min-width:
+          145px;
+
+        font-size:
+          16px;
+      }
+
+
+      .container {
+        margin-top:
+          15px;
+
+        padding:
+          0 10px;
+      }
+
+
+      .banner {
+        padding:
+          28px 20px;
+
+        border-radius:
+          18px;
+      }
+
+
+      .banner h1 {
+        font-size:
+          27px;
+      }
+
+
+      .banner .desc {
+        font-size:
+          17px;
+      }
+
+
+      .step-navigation {
+        gap:
+          5px;
+
+        padding:
+          10px;
+      }
+
+
+      .step-item {
+        padding:
+          8px 3px;
+
+        font-size:
+          14px;
+      }
+
+
+      .step-number {
+        width:
+          30px;
+
+        height:
+          30px;
+
+        font-size:
+          16px;
+      }
+
+
+      .card {
+        padding:
+          22px 16px;
+      }
+
+
+      .card-title {
+        font-size:
+          24px;
+      }
+
+
+      .form-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .checkbox-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .rubric-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+
+      .rubric-col:last-child {
+        grid-column:
+          1 / -1;
+      }
+
+
+      .scale-choices {
+        gap:
+          5px;
+      }
+
+
+      .scale-choice label {
+        min-height:
+          65px;
+
+        padding:
+          5px 2px;
+      }
+
+
+      .scale-score {
+        font-size:
+          23px;
+      }
+
+
+      .scale-desc {
+        font-size:
+          13px;
+      }
+
+
+      .question-stem {
+        font-size:
+          19px;
+      }
+
+
+      .btn {
+        padding:
+          10px 18px;
+
+        font-size:
+          19px;
+      }
+
+    }
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       PROGRESS
+       ===================================================== -->
+
+  <aside
+    class="progress-dock"
+    aria-label="ความคืบหน้าการตอบแบบสอบถาม"
+  >
+
+    <div class="progress-content">
+
+      <span
+        class="progress-label"
+        id="progressStatus"
+      >
+        ความคืบหน้า: 0 / 30 ข้อ (0%)
+      </span>
+
+      <div class="progress-track">
+
+        <div
+          class="progress-fill"
+          id="progressFill"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <main class="container">
+
+
+    <!-- =====================================================
+         BANNER
+         ===================================================== -->
+
+    <header class="banner">
+
+      <div class="institution">
+        โรงเรียนหลวงพ่อปานคลองด่านอนุสรณ์
+      </div>
+
+      <h1>
+        แบบสอบถามการประเมินความพร้อม สภาพการใช้งาน และความพึงพอใจต่อเครื่องมือดิจิทัลเพื่อการเรียนรู้
+      </h1>
+
+      <p class="desc">
+        แบบสอบถามฉบับนี้จัดทำขึ้นเพื่อใช้ในการวิจัยเชิงสำรวจ มีวัตถุประสงค์เพื่อศึกษาระดับความพร้อมด้านอุปกรณ์เทคโนโลยีสารสนเทศและการเชื่อมต่อระบบเครือข่ายอินเทอร์เน็ตของนักเรียน ศึกษาสภาพการใช้งานและสมรรถนะในการใช้เครื่องมือดิจิทัลเพื่อการเรียนรู้ ตลอดจนศึกษาระดับความพึงพอใจของนักเรียนที่มีต่อการใช้เครื่องมือและแพลตฟอร์มดิจิทัลในการจัดการเรียนรู้ของโรงเรียนหลวงพ่อปานคลองด่านอนุสรณ์ ทั้งนี้ ข้อมูลที่ได้จากการวิจัยจะนำมาใช้เป็นสารสนเทศสำหรับประเมินสภาพปัจจุบัน วิเคราะห์ประเด็นที่เกี่ยวข้อง และเป็นแนวทางในการพัฒนาและเพิ่มประสิทธิภาพการจัดการเรียนรู้โดยบูรณาการเทคโนโลยีดิจิทัลของสถานศึกษาต่อไป
+      </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         STEP NAVIGATION
+         ===================================================== -->
+
+    <div class="step-navigation">
+
+      <div
+        class="step-item active"
+        data-step="0"
+      >
+
+        <div class="step-number">
+          1
+        </div>
+
+        ข้อมูลทั่วไป
+
+      </div>
+
+
+      <div
+        class="step-item"
+        data-step="1"
+      >
+
+        <div class="step-number">
+          2
+        </div>
+
+        ความพร้อม
+
+      </div>
+
+
+      <div
+        class="step-item"
+        data-step="2"
+      >
+
+        <div class="step-number">
+          3
+        </div>
+
+        สมรรถนะ
+
+      </div>
+
+
+      <div
+        class="step-item"
+        data-step="3"
+      >
+
+        <div class="step-number">
+          4
+        </div>
+
+        ความพึงพอใจ
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FORM
+         ===================================================== -->
+
+    <form
+      id="surveyForm"
+      novalidate
+    >
+
+
+      <!-- =================================================
+           STEP 1
+           ================================================= -->
+
+      <section
+        class="card active survey-step"
+        data-step="0"
+      >
+
+        <header class="card-header">
+
+          <span class="badge">
+            ตอนที่ 1
+          </span>
+
+          <h2 class="card-title">
+            ข้อมูลทั่วไปของผู้ตอบแบบสอบถาม
+          </h2>
+
+          <p class="card-subtitle">
+            โปรดระบุข้อมูลส่วนบุคคลและลักษณะทางประชากรศาสตร์ที่สอดคล้องกับสภาพความเป็นจริงของท่าน
+          </p>
+
+        </header>
+
+
+        <div class="form-grid">
+
+
+          <div class="form-group">
+
+            <label
+              class="form-label"
+              for="gender"
+            >
+              1. เพศสภาพ *
+            </label>
+
+            <select
+              id="gender"
+              name="gender"
+              required
+            >
+
+              <option value="">
+                -- กรุณาระบุเพศสภาพ --
+              </option>
+
+              <option value="ชาย">
+                ชาย
+              </option>
+
+              <option value="หญิง">
+                หญิง
+              </option>
+
+              <option value="หลากหลายทางเพศ">
+                หลากหลายทางเพศ (LGBTQ+)
+              </option>
+
+              <option value="ไม่ประสงค์ระบุ">
+                ไม่ประสงค์ระบุข้อมูล
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label
+              class="form-label"
+              for="grade"
+            >
+              2. ระดับชั้นการศึกษาปัจจุบัน *
+            </label>
+
+            <select
+              id="grade"
+              name="grade"
+              required
+            >
+
+              <option value="">
+                -- กรุณาระบุระดับชั้น --
+              </option>
+
+              <option value="มัธยมศึกษาปีที่ 1">
+                ชั้นมัธยมศึกษาปีที่ 1
+              </option>
+
+              <option value="มัธยมศึกษาปีที่ 2">
+                ชั้นมัธยมศึกษาปีที่ 2
+              </option>
+
+              <option value="มัธยมศึกษาปีที่ 3">
+                ชั้นมัธยมศึกษาปีที่ 3
+              </option>
+
+              <option value="มัธยมศึกษาปีที่ 4">
+                ชั้นมัธยมศึกษาปีที่ 4
+              </option>
+
+              <option value="มัธยมศึกษาปีที่ 5">
+                ชั้นมัธยมศึกษาปีที่ 5
+              </option>
+
+              <option value="มัธยมศึกษาปีที่ 6">
+                ชั้นมัธยมศึกษาปีที่ 6
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label
+              class="form-label"
+              for="studyPlan"
+            >
+              3. กลุ่มสาระการเรียนรู้ / แผนการเรียน *
+            </label>
+
+            <select
+              id="studyPlan"
+              name="studyPlan"
+              required
+            >
+
+              <option value="">
+                -- กรุณาระบุแผนการเรียน --
+              </option>
+
+              <option value="วิทยาศาสตร์–คณิตศาสตร์">
+                แผนการเรียนวิทยาศาสตร์–คณิตศาสตร์
+              </option>
+
+              <option value="ศิลป์–คำนวณ">
+                แผนการเรียนศิลปศาสตร์–คำนวณ
+              </option>
+
+              <option value="ศิลป์–ภาษา">
+                แผนการเรียนศิลปศาสตร์–ภาษา
+              </option>
+
+              <option value="แผนการเรียนทั่วไป/อื่น ๆ">
+                แผนการเรียนทั่วไป / อื่น ๆ
+              </option>
+
+              <option value="ระดับมัธยมศึกษาตอนต้น">
+                ระดับมัธยมศึกษาตอนต้น (หลักสูตรแกนกลาง)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label
+              class="form-label"
+              for="internet"
+            >
+              4. แหล่งสัญญาณเครือข่ายอินเทอร์เน็ตหลักที่เข้าถึง *
+            </label>
+
+            <select
+              id="internet"
+              name="internet"
+              required
+            >
+
+              <option value="">
+                -- กรุณาระบุการเชื่อมต่อหลัก --
+              </option>
+
+              <option value="เครือข่ายโทรศัพท์เคลื่อนที่ (4G/5G)">
+                เครือข่ายโทรศัพท์เคลื่อนที่ส่วนบุคคล (4G / 5G)
+              </option>
+
+              <option value="เครือข่ายไร้สายประจำที่พัก (Home Wi-Fi)">
+                เครือข่ายไร้สายความเร็วสูงประจำที่พักอาศัย (Home Wi-Fi)
+              </option>
+
+              <option value="เครือข่ายอินเทอร์เน็ตสถานศึกษา">
+                เครือข่ายอินเทอร์เน็ตของสถานศึกษา
+              </option>
+
+              <option value="จุดบริการอินเทอร์เน็ตสาธารณะ">
+                จุดบริการสัญญาณอินเทอร์เน็ตสาธารณะ
+              </option>
+
+              <option value="ไม่มีสัญญาณอินเทอร์เน็ตประจำ">
+                ไม่มีสัญญาณอินเทอร์เน็ตใช้งานเป็นประจำ
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label
+              class="form-label"
+              for="dailyTime"
+            >
+              5. ระยะเวลาเฉลี่ยในการใช้อุปกรณ์เพื่อการศึกษาต่อวัน *
+            </label>
+
+            <select
+              id="dailyTime"
+              name="dailyTime"
+              required
+            >
+
+              <option value="">
+                -- กรุณาระบุระยะเวลา --
+              </option>
+
+              <option value="น้อยกว่า 1 ชั่วโมง">
+                น้อยกว่า 1 ชั่วโมงต่อวัน
+              </option>
+
+              <option value="1 – 2 ชั่วโมง">
+                1 – 2 ชั่วโมงต่อวัน
+              </option>
+
+              <option value="มากกว่า 2 – 3 ชั่วโมง">
+                มากกว่า 2 – 3 ชั่วโมงต่อวัน
+              </option>
+
+              <option value="มากกว่า 3 – 4 ชั่วโมง">
+                มากกว่า 3 – 4 ชั่วโมงต่อวัน
+              </option>
+
+              <option value="มากกว่า 4 ชั่วโมงขึ้นไป">
+                มากกว่า 4 ชั่วโมงขึ้นไปต่อวัน
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label
+              class="form-label"
+              for="experience"
+            >
+              6. ประสบการณ์การประยุกต์ใช้เครื่องมือดิจิทัลเพื่อการเรียนรู้ *
+            </label>
+
+            <select
+              id="experience"
+              name="experience"
+              required
+            >
+
+              <option value="">
+                -- กรุณาระบุประสบการณ์ --
+              </option>
+
+              <option value="น้อยกว่า 1 ปี">
+                น้อยกว่า 1 ปี
+              </option>
+
+              <option value="1 – 2 ปี">
+                1 – 2 ปี
+              </option>
+
+              <option value="มากกว่า 2 – 3 ปี">
+                มากกว่า 2 – 3 ปี
+              </option>
+
+              <option value="มากกว่า 3 ปีขึ้นไป">
+                มากกว่า 3 ปีขึ้นไป
+              </option>
+
+              <option value="ไม่มีประสบการณ์มาก่อน">
+                ไม่มีประสบการณ์มาก่อน
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group full-width">
+
+            <label class="form-label">
+
+              7. อุปกรณ์ดิจิทัลที่มีความพร้อมต่อการจัดการเรียนรู้ (เลือกตอบได้มากกว่า 1 รายการ) *
+
+            </label>
+
+
+            <div class="checkbox-grid">
+
+              <label class="checkbox-item">
+
+                <input
+                  type="checkbox"
+                  name="devices"
+                  value="สมาร์ตโฟน"
+                >
+
+                สมาร์ตโฟน (Smartphone)
+
+              </label>
+
+
+              <label class="checkbox-item">
+
+                <input
+                  type="checkbox"
+                  name="devices"
+                  value="แท็บเล็ต"
+                >
+
+                แท็บเล็ต / คอมพิวเตอร์พกพา (Tablet / iPad)
+
+              </label>
+
+
+              <label class="checkbox-item">
+
+                <input
+                  type="checkbox"
+                  name="devices"
+                  value="คอมพิวเตอร์โน้ตบุ๊ก"
+                >
+
+                คอมพิวเตอร์โน้ตบุ๊ก (Laptop)
+
+              </label>
+
+
+              <label class="checkbox-item">
+
+                <input
+                  type="checkbox"
+                  name="devices"
+                  value="คอมพิวเตอร์ตั้งโต๊ะ"
+                >
+
+                คอมพิวเตอร์ตั้งโต๊ะ (Desktop PC)
+
+              </label>
+
+
+              <label class="checkbox-item">
+
+                <input
+                  type="checkbox"
+                  name="devices"
+                  value="ไม่มีอุปกรณ์ส่วนตัว"
+                >
+
+                ไม่มีอุปกรณ์ดิจิทัลส่วนตัว
+
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="navigation-buttons">
+
+          <div></div>
+
+          <button
+            type="button"
+            class="btn btn-next"
+            onclick="nextStep()"
+          >
+            ถัดไป →
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           STEP 2
+           ================================================= -->
+
+      <section
+        class="card survey-step"
+        data-step="1"
+      >
+
+        <header class="card-header">
+
+          <span class="badge">
+            ตอนที่ 2
+          </span>
+
+          <h2 class="card-title">
+            ความพร้อมด้านอุปกรณ์และการเชื่อมต่อเครือข่ายอินเทอร์เน็ต
+          </h2>
+
+          <p class="card-subtitle">
+            วัตถุประสงค์ข้อที่ 1: เพื่อประเมินความพร้อมเชิงกายภาพ ด้านอุปกรณ์ โครงสร้างพื้นฐาน และเสถียรภาพในการเชื่อมต่อ
+          </p>
+
+        </header>
+
+
+        <div class="rubric-box">
+
+          <div class="rubric-title">
+            เกณฑ์ระดับการประเมินค่าน้ำหนัก 5 ระดับ
+          </div>
+
+          <div class="rubric-grid">
+
+            <div class="rubric-col">
+              <strong>5</strong>
+              มีความพร้อม/ความราบรื่นระดับมากที่สุด
+            </div>
+
+            <div class="rubric-col">
+              <strong>4</strong>
+              มีความพร้อม/ความราบรื่นระดับมาก
+            </div>
+
+            <div class="rubric-col">
+              <strong>3</strong>
+              มีความพร้อม/ความราบรื่นระดับปานกลาง
+            </div>
+
+            <div class="rubric-col">
+              <strong>2</strong>
+              มีความพร้อมน้อย มีข้อจำกัดเป็นระยะ
+            </div>
+
+            <div class="rubric-col">
+              <strong>1</strong>
+              มีความพร้อมระดับน้อยที่สุดหรือขาดแคลน
+            </div>
+
+          </div>
+
+          <div class="rubric-footer">
+            เกณฑ์การแปลผล: 4.21–5.00 (มากที่สุด) | 3.41–4.20 (มาก) | 2.61–3.40 (ปานกลาง) | 1.81–2.60 (น้อย) | 1.00–1.80 (น้อยที่สุด)
+          </div>
+
+        </div>
+
+
+        <div id="readinessQuestions"></div>
+
+
+        <div class="navigation-buttons">
+
+          <button
+            type="button"
+            class="btn btn-prev"
+            onclick="prevStep()"
+          >
+            ← ย้อนกลับ
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-next"
+            onclick="nextStep()"
+          >
+            ถัดไป →
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           STEP 3
+           ================================================= -->
+
+      <section
+        class="card survey-step"
+        data-step="2"
+      >
+
+        <header class="card-header">
+
+          <span class="badge">
+            ตอนที่ 3
+          </span>
+
+          <h2 class="card-title">
+            สภาพการใช้งานและสมรรถนะการใช้เครื่องมือดิจิทัล
+          </h2>
+
+          <p class="card-subtitle">
+            วัตถุประสงค์ข้อที่ 2: เพื่อประเมินพฤติกรรมการใช้งานจริง สมรรถนะทางเทคโนโลยี และความตระหนักรู้ด้านความมั่นคงปลอดภัยสารสนเทศ
+          </p>
+
+        </header>
+
+
+        <div class="rubric-box">
+
+          <div class="rubric-title">
+            เกณฑ์ระดับการประเมินค่าน้ำหนัก 5 ระดับ
+          </div>
+
+          <div class="rubric-grid">
+
+            <div class="rubric-col">
+              <strong>5</strong>
+              สามารถปฏิบัติได้คล่องแคล่วระดับมากที่สุด
+            </div>
+
+            <div class="rubric-col">
+              <strong>4</strong>
+              สามารถปฏิบัติได้คล่องแคล่วระดับมาก
+            </div>
+
+            <div class="rubric-col">
+              <strong>3</strong>
+              สามารถปฏิบัติได้ระดับปานกลาง (ตามเกณฑ์)
+            </div>
+
+            <div class="rubric-col">
+              <strong>2</strong>
+              ปฏิบัติได้ระดับน้อย (ต้องมีผู้กำกับดูแล)
+            </div>
+
+            <div class="rubric-col">
+              <strong>1</strong>
+              ปฏิบัติได้ระดับน้อยที่สุดหรือไม่สามารถทำได้
+            </div>
+
+          </div>
+
+          <div class="rubric-footer">
+            เกณฑ์การแปลผล: 4.21–5.00 (มากที่สุด) | 3.41–4.20 (มาก) | 2.61–3.40 (ปานกลาง) | 1.81–2.60 (น้อย) | 1.00–1.80 (น้อยที่สุด)
+          </div>
+
+        </div>
+
+
+        <div id="competenceQuestions"></div>
+
+
+        <div class="navigation-buttons">
+
+          <button
+            type="button"
+            class="btn btn-prev"
+            onclick="prevStep()"
+          >
+            ← ย้อนกลับ
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-next"
+            onclick="nextStep()"
+          >
+            ถัดไป →
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           STEP 4
+           ================================================= -->
+
+      <section
+        class="card survey-step"
+        data-step="3"
+      >
+
+        <header class="card-header">
+
+          <span class="badge">
+            ตอนที่ 4
+          </span>
+
+          <h2 class="card-title">
+            ความพึงพอใจต่อการใช้เครื่องมือดิจิทัลในการจัดการเรียนรู้
+          </h2>
+
+          <p class="card-subtitle">
+            วัตถุประสงค์ข้อที่ 3: เพื่อประเมินเจตคติ บรรยากาศในการเรียนรู้ ประสิทธิผล และความพึงพอใจโดยรวมของผู้เรียน
+          </p>
+
+        </header>
+
+
+        <div class="rubric-box">
+
+          <div class="rubric-title">
+            เกณฑ์ระดับการประเมินค่าน้ำหนัก 5 ระดับ
+          </div>
+
+          <div class="rubric-grid">
+
+            <div class="rubric-col">
+              <strong>5</strong>
+              มีความพึงพอใจในระดับมากที่สุด
+            </div>
+
+            <div class="rubric-col">
+              <strong>4</strong>
+              มีความพึงพอใจในระดับมาก
+            </div>
+
+            <div class="rubric-col">
+              <strong>3</strong>
+              มีความพึงพอใจในระดับปานกลาง
+            </div>
+
+            <div class="rubric-col">
+              <strong>2</strong>
+              มีความพึงพอใจในระดับน้อย
+            </div>
+
+            <div class="rubric-col">
+              <strong>1</strong>
+              มีความพึงพอใจในระดับน้อยที่สุด
+            </div>
+
+          </div>
+
+          <div class="rubric-footer">
+            เกณฑ์การแปลผล: 4.21–5.00 (มากที่สุด) | 3.41–4.20 (มาก) | 2.61–3.40 (ปานกลาง) | 1.81–2.60 (น้อย) | 1.00–1.80 (น้อยที่สุด)
+          </div>
+
+        </div>
+
+
+        <div id="satisfactionQuestions"></div>
+
+
+        <div class="navigation-buttons">
+
+          <button
+            type="button"
+            class="btn btn-prev"
+            onclick="prevStep()"
+          >
+            ← ย้อนกลับ
+          </button>
+
+          <button
+            type="submit"
+            id="submitBtn"
+            class="btn btn-submit"
+          >
+            ส่งแบบสอบถามข้อมูลเชิงวิจัย
+          </button>
+
+        </div>
+
+      </section>
+
+
+    </form>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+      <div class="title">
+        เครื่องมือวิจัยประเมินความพร้อมและสมรรถนะทางดิจิทัลเพื่อการจัดการศึกษา
+      </div>
+
+      <div>
+        โรงเรียนหลวงพ่อปานคลองด่านอนุสรณ์ สังกัดสำนักงานเขตพื้นที่การศึกษามัธยมศึกษาสมุทรปราการ
+      </div>
+
+      <div class="academic-credit">
+
+        <p>
+          การศึกษาวิจัยและพัฒนาระบบโดย นักศึกษาระดับบัณฑิตศึกษา
+        </p>
+
+        <span class="author-name">
+          1. นายศิครินทร์ แน่นอุดร นักศึกษาปริญญาโท คณะศึกษาศาสตร์ สาขาเทคโนโลยีดิจิทัลและนวัตกรรมการเรียนรู้ มหาวิทยาลัยรามคำแหง
+        </span>
+
+        <span class="author-name">
+          2. นายชลอนันต์ ปฏิรัตนัง นักศึกษาปริญญาโท คณะศึกษาศาสตร์ สาขาเทคโนโลยีดิจิทัลและนวัตกรรมการเรียนรู้ มหาวิทยาลัยรามคำแหง
+        </span>
+
+      </div>
+
+    </footer>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       HIDDEN IFRAME
+       ===================================================== -->
+
+  <iframe
+    name="hiddenSubmitFrame"
+    id="hiddenSubmitFrame"
+    style="display:none"
+    aria-hidden="true"
+  ></iframe>
+
+
+  <!-- =====================================================
+       MODAL
+       ===================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="statusModal"
+    role="dialog"
+    aria-modal="true"
+  >
+
+    <div class="modal-dialog">
+
+      <div
+        class="modal-icon-container"
+        id="modalIconNode"
+      >
+        ℹ️
+      </div>
+
+      <h3
+        class="modal-title"
+        id="modalHeading"
+      >
+        การแจ้งเตือนระบบ
+      </h3>
+
+      <p
+        class="modal-message"
+        id="modalContentText"
+      ></p>
+
+
+      <div
+        id="countdownBox"
+        style="display:none"
+      >
+
+        <span
+          class="countdown-tag"
+          id="countdownNotice"
+        ></span>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="btn-modal"
+        id="modalConfirmBtn"
+        onclick="handleModalAction()"
+      >
+        รับทราบ
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+
+    /* =====================================================
+       CONFIG
+       ===================================================== */
+
+    const APP_CONFIG = {
+
+      API_ENDPOINT:
+        'https://script.google.com/macros/s/AKfycby8P-NQ80tBg3K8lfiUPku5RzYT4W093ggeAf3r8K7sdTjNZrfUJZk9IAcB0wviaArx2Q/exec'
+
+    };
+
+
+    /* =====================================================
+       SURVEY DATA
+       ===================================================== */
+
+    const SURVEY_DATA = {
+
+      readiness: [
+
+        'นักเรียนมีอุปกรณ์ดิจิทัลส่วนตัว (เช่น สมาร์ตโฟน แท็บเล็ต หรือคอมพิวเตอร์) ที่พร้อมใช้งานเพื่อการเรียนรู้ได้ทุกเมื่อที่ต้องการ',
+
+        'ประสิทธิภาพของอุปกรณ์ (ความเร็ว หน่วยความจำ แบตเตอรี่) รองรับการเปิดแอปพลิเคชันเพื่อการศึกษาได้อย่างราบรื่น ปราศจากความล่าช้า',
+
+        'สัญญาณเครือข่ายอินเทอร์เน็ต ณ ที่พักอาศัย มีความเสถียรและความเร็วเพียงพอต่อการรับชมวิดีโอบทเรียนหรือร่วมชั้นเรียนออนไลน์',
+
+        'ปริมาณและขีดจำกัดความเร็วของแพ็กเกจอินเทอร์เน็ตมีความเพียงพอต่อการสืบค้นข้อมูลและการส่งงานตลอดรอบเดือน',
+
+        'ค่าใช้จ่ายด้านบริการเครือข่ายอินเทอร์เน็ตและการบำรุงรักษาอุปกรณ์ไม่ก่อให้เกิดภาระทางการเงินแก่ตนเองและครอบครัว',
+
+        'สภาพแวดล้อมและพื้นที่กายภาพภายในที่พักอาศัย มีความสงบและเอื้ออำนวยต่อสมาธิในการเรียนรู้ผ่านระบบดิจิทัล',
+
+        'นักเรียนมีอุปกรณ์เสริมที่จำเป็น (เช่น หูฟัง อะแดปเตอร์ สายชาร์จ) ครบถ้วนและอยู่ในสภาพสมบูรณ์พร้อมต่อการใช้งาน',
+
+        'นักเรียนสามารถบริหารจัดการเวลาในการใช้อุปกรณ์เพื่อการศึกษาได้อย่างเต็มศักยภาพ โดยมิต้องจัดสรรการใช้งานร่วมกับผู้อื่น',
+
+        'สถานีปฏิบัติงานดิจิทัลภายในที่พักอาศัยมีระบบไฟฟ้า แสงสว่าง และโต๊ะเก้าอี้ที่สอดคล้องตามหลักการยศาสตร์ (Ergonomics)',
+
+        'นักเรียนสามารถเข้าถึงแหล่งจ่ายพลังงานสำรอง (Power Bank) หรือเต้ารับไฟฟ้าได้อย่างสะดวกเมื่อมีความจำเป็นต้องใช้อุปกรณ์นอกสถานที่'
+
+      ],
+
+
+      competence: [
+
+        'นักเรียนสามารถเข้าถึงและใช้งานระบบจัดการการเรียนรู้ (LMS เช่น Google Classroom) เพื่อรับข้อมูลข่าวสาร ติดตามภาระงาน และส่งผลงานได้ด้วยตนเอง',
+
+        'นักเรียนสามารถประยุกต์ใช้ระบบคลาวด์สำหรับจัดเก็บไฟล์ (Cloud Storage เช่น Google Drive, OneDrive) เพื่อบริหารจัดการและแบ่งปันแฟ้มสะสมงานร่วมกับผู้อื่น',
+
+        'นักเรียนสามารถใช้แอปพลิเคชันสร้างสรรค์ผลงาน (เช่น Canva, Microsoft PowerPoint) ในการจัดทำสไลด์หรืออินโฟกราฟิกเพื่อนำเสนอสารสนเทศได้อย่างมีประสิทธิภาพ',
+
+        'นักเรียนสามารถกำหนดและประยุกต์ใช้คำค้นหาเชิงลึก (Keywords) บนอินเทอร์เน็ต เพื่อสืบค้นข้อมูลเชิงวิชาการได้อย่างรวดเร็วและตรงตามวัตถุประสงค์',
+
+        'นักเรียนมีความตระหนักรู้ด้านความมั่นคงปลอดภัยสารสนเทศ (เช่น การกำหนดรหัสผ่านที่ซับซ้อน การไม่เปิดเผยข้อมูลส่วนบุคคล และการออกจากระบบหลังการใช้งานส่วนรวม)',
+
+        'นักเรียนสามารถสังเกต ตระหนักรู้ และหลีกเลี่ยงภัยคุกคามทางไซเบอร์ เช่น การไม่เปิดลิงก์ที่ไม่พึงประสงค์ หรือข้อความล่อลวงเพื่อการโจรกรรมข้อมูล (Phishing)',
+
+        'นักเรียนสามารถประยุกต์ใช้ปัญญาประดิษฐ์เพื่อการเรียนรู้ (Generative AI เช่น ChatGPT, Gemini) ในการสรุปประเด็นสาระสำคัญ อธิบายข้อสงสัย หรือริเริ่มมโนทัศน์ในการเรียน',
+
+        'นักเรียนมีความสามารถในการตรวจสอบ ประเมินความน่าเชื่อถือ และเปรียบเทียบสารสนเทศจากหลากหลายแหล่งอ้างอิง ก่อนนำมาประมวลผลเป็นงานวิชาการ',
+
+        'นักเรียนสามารถแก้ปัญหาเชิงเทคนิคขั้นพื้นฐานได้ด้วยตนเองเมื่อระบบหรือแอปพลิเคชันเกิดความขัดข้อง (เช่น การล้างแคช, การรีสตาร์ตระบบ)',
+
+        'นักเรียนสามารถใช้โปรแกรมประมวลผลคำเพื่อพิมพ์ จัดรูปแบบ และเรียบเรียงเอกสารรายงานวิชาการให้เป็นไปตามระเบียบแบบแผนที่สถานศึกษากำหนด'
+
+      ],
+
+
+      satisfaction: [
+
+        'การประยุกต์ใช้เครื่องมือดิจิทัลในการจัดการเรียนรู้ ช่วยส่งเสริมความเข้าใจในสาระบทเรียนและสร้างมโนภาพเชิงประจักษ์ได้ชัดเจนยิ่งขึ้น',
+
+        'กระบวนการส่งงานและประเมินผลผ่านระบบออนไลน์มีความสะดวกรวดเร็ว ตลอดจนช่วยลดความเสี่ยงต่อการสูญหายของผลงาน',
+
+        'สื่อนวัตกรรมดิจิทัลและกิจกรรมการเรียนรู้แบบมีปฏิสัมพันธ์ ช่วยกระตุ้นความสนใจและสร้างบรรยากาศการเรียนรู้ที่เอื้อต่อการมีส่วนร่วม',
+
+        'แพลตฟอร์มการเรียนรู้ดิจิทัลเอื้ออำนวยให้นักเรียนสามารถทบทวนเนื้อหาย้อนหลังได้ตามอัตราความเร็วในการเรียนรู้เฉพาะบุคคล (Self-paced Learning)',
+
+        'ครูผู้สอนมีสมรรถนะความเชี่ยวชาญ คล่องแคล่ว และสามารถให้คำปรึกษาชี้แนะเชิงเทคนิคเกี่ยวกับการใช้เครื่องมือดิจิทัลได้อย่างมีประสิทธิภาพ',
+
+        'การจัดกิจกรรมการเรียนรู้ด้วยเครื่องมือดิจิทัลเปิดโอกาสให้นักเรียนได้สะท้อนความคิด ร่วมอภิปราย และประสานความร่วมมือระหว่างผู้เรียนได้อย่างสร้างสรรค์',
+
+        'การจัดการเรียนรู้ผ่านระบบดิจิทัลช่วยลดปริมาณการใช้ทรัพยากรกระดาษ และสนับสนุนการจัดเก็บคลังสารสนเทศผลงานอย่างเป็นระบบ',
+
+        'โครงสร้างพื้นฐานระบบเครือข่ายสัญญาณอินเทอร์เน็ตและคอมพิวเตอร์ที่สถานศึกษาจัดเตรียมไว้ มีความพร้อมและสนับสนุนการเรียนรู้ได้อย่างเต็มศักยภาพ',
+
+        'ประสบการณ์การฝึกปฏิบัติใช้งานเทคโนโลยีดิจิทัลภายในสถานศึกษา ช่วยเสริมสร้างทักษะศตวรรษที่ 21 ซึ่งเอื้อต่อการศึกษาต่อในระดับอุดมศึกษา',
+
+        'นักเรียนมีความพึงพอใจในภาพรวมระดับสูงต่อการนำนวัตกรรมและเทคโนโลยีดิจิทัลมาบูรณาการในการจัดการศึกษาของสถานศึกษา'
+
+      ]
+
+    };
+
+
+    /* =====================================================
+       GENERATE QUESTIONS
+       ===================================================== */
+
+    let questionNumber = 0;
+
+
+    function createQuestion(
+      statement,
+      rubric
+    ) {
+
+      questionNumber++;
+
+      const qNum =
+        questionNumber;
+
+
+      const descriptions = {
+
+        5: rubric[0],
+        4: rubric[1],
+        3: rubric[2],
+        2: rubric[3],
+        1: rubric[4]
+
+      };
+
+
+      const options =
+        [5,4,3,2,1]
+          .map(score => {
+
+            return `
+
+              <div class="scale-choice">
+
+                <input
+                  type="radio"
+                  id="q${qNum}_${score}"
+                  name="q${qNum}"
+                  value="${score}"
+                  required
+                >
+
+                <label
+                  for="q${qNum}_${score}"
+                >
+
+                  <span class="scale-score">
+                    ${score}
+                  </span>
+
+                  <span class="scale-desc">
+                    ${descriptions[score]}
+                  </span>
+
+                </label>
+
+              </div>
+
+            `;
+
+          })
+          .join('');
+
+
+      return `
+
+        <div class="question-row">
+
+          <div class="question-stem">
+            ${qNum}. ${statement} *
+          </div>
+
+          <div class="scale-choices">
+            ${options}
+          </div>
+
+        </div>
+
+      `;
+    }
+
+
+    /* =====================================================
+       BUILD QUESTIONS
+       ===================================================== */
+
+    const readinessRubric = [
+
+      'มีความพร้อม/ความราบรื่นระดับมากที่สุด',
+      'มีความพร้อม/ความราบรื่นระดับมาก',
+      'มีความพร้อม/ความราบรื่นระดับปานกลาง',
+      'มีความพร้อมน้อย มีข้อจำกัดเป็นระยะ',
+      'มีความพร้อมระดับน้อยที่สุดหรือขาดแคลน'
+
+    ];
+
+
+    const competenceRubric = [
+
+      'สามารถปฏิบัติได้คล่องแคล่วระดับมากที่สุด',
+      'สามารถปฏิบัติได้คล่องแคล่วระดับมาก',
+      'สามารถปฏิบัติได้ระดับปานกลาง (ตามเกณฑ์)',
+      'ปฏิบัติได้ระดับน้อย (ต้องมีผู้กำกับดูแล)',
+      'ปฏิบัติได้ระดับน้อยที่สุดหรือไม่สามารถทำได้'
+
+    ];
+
+
+    const satisfactionRubric = [
+
+      'มีความพึงพอใจในระดับมากที่สุด',
+      'มีความพึงพอใจในระดับมาก',
+      'มีความพึงพอใจในระดับปานกลาง',
+      'มีความพึงพอใจในระดับน้อย',
+      'มีความพึงพอใจในระดับน้อยที่สุด'
+
+    ];
+
+
+    document.getElementById(
+      'readinessQuestions'
+    ).innerHTML =
+      SURVEY_DATA.readiness
+        .map(item =>
+          createQuestion(
+            item,
+            readinessRubric
+          )
+        )
+        .join('');
+
+
+    document.getElementById(
+      'competenceQuestions'
+    ).innerHTML =
+      SURVEY_DATA.competence
+        .map(item =>
+          createQuestion(
+            item,
+            competenceRubric
+          )
+        )
+        .join('');
+
+
+    document.getElementById(
+      'satisfactionQuestions'
+    ).innerHTML =
+      SURVEY_DATA.satisfaction
+        .map(item =>
+          createQuestion(
+            item,
+            satisfactionRubric
+          )
+        )
+        .join('');
+
+
+    /* =====================================================
+       STEP SYSTEM
+       ===================================================== */
+
+    const TOTAL_STEPS =
+      4;
+
+    let currentStep =
+      0;
+
+
+    const steps =
+      document.querySelectorAll(
+        '.survey-step'
+      );
+
+
+    const stepIndicators =
+      document.querySelectorAll(
+        '.step-item'
+      );
+
+
+    function showStep(step) {
+
+      currentStep =
+        Math.max(
+          0,
+          Math.min(
+            TOTAL_STEPS - 1,
+            step
+          )
+        );
+
+
+      steps.forEach(
+        (element, index) => {
+
+          element.classList.toggle(
+            'active',
+            index === currentStep
+          );
+
+        }
+      );
+
+
+      stepIndicators.forEach(
+        (element, index) => {
+
+          element.classList.toggle(
+            'active',
+            index === currentStep
+          );
+
+          element.classList.toggle(
+            'completed',
+            index < currentStep
+          );
+
+        }
+      );
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+
+      updateProgress();
+
+    }
+
+
+    function nextStep() {
+
+      if (!validateCurrentStep()) {
+        return;
+      }
+
+
+      if (
+        currentStep <
+        TOTAL_STEPS - 1
+      ) {
+
+        showStep(
+          currentStep + 1
+        );
+
+      }
+
+    }
+
+
+    function prevStep() {
+
+      if (
+        currentStep >
+        0
+      ) {
+
+        showStep(
+          currentStep - 1
+        );
+
+      }
+
+    }
+
+
+    /* =====================================================
+       VALIDATION
+       ===================================================== */
+
+    function validateCurrentStep() {
+
+      const currentSection =
+        steps[currentStep];
+
+
+      if (
+        currentStep === 0
+      ) {
+
+        const requiredSelects =
+          currentSection.querySelectorAll(
+            'select[required]'
+          );
+
+
+        for (
+          const select
+          of requiredSelects
+        ) {
+
+          if (!select.value) {
+
+            displayDialog(
+              'error',
+              'ข้อมูลไม่ครบถ้วน',
+              'กรุณาระบุข้อมูลในส่วนข้อมูลทั่วไปให้ครบถ้วน'
+            );
+
+            select.focus();
+
+            return false;
+          }
+
+        }
+
+
+        const devices =
+          currentSection.querySelectorAll(
+            'input[name="devices"]:checked'
+          );
+
+
+        if (
+          devices.length === 0
+        ) {
+
+          displayDialog(
+            'error',
+            'ข้อมูลไม่ครบถ้วน',
+            'กรุณาเลือกอุปกรณ์ดิจิทัลที่ท่านมีหรือสามารถเข้าถึงได้อย่างน้อย 1 รายการ'
+          );
+
+          return false;
+        }
+
+      }
+
+
+      if (
+        currentStep >= 1
+      ) {
+
+        const radios =
+          currentSection.querySelectorAll(
+            'input[type="radio"]'
+          );
+
+
+        const names =
+          new Set();
+
+
+        radios.forEach(
+          radio => {
+
+            names.add(
+              radio.name
+            );
+
+          }
+        );
+
+
+        for (
+          const name
+          of names
+        ) {
+
+          if (
+            !currentSection.querySelector(
+              `input[name="${name}"]:checked`
+            )
+          ) {
+
+            const q =
+              name.replace(
+                'q',
+                ''
+              );
+
+
+            displayDialog(
+              'error',
+              'ข้อมูลไม่ครบถ้วน',
+              `กรุณาตอบแบบประเมินให้ครบถ้วนทุกข้อ (ยังไม่ได้ระบุข้อที่ ${q})`
+            );
+
+
+            const target =
+              currentSection.querySelector(
+                `input[name="${name}"]`
+              );
+
+
+            if (target) {
+              target.focus();
+            }
+
+
+            return false;
+          }
+
+        }
+
+      }
+
+
+      return true;
+    }
+
+
+    /* =====================================================
+       PROGRESS
+       ===================================================== */
+
+    const progressFill =
+      document.getElementById(
+        'progressFill'
+      );
+
+
+    const progressStatus =
+      document.getElementById(
+        'progressStatus'
+      );
+
+
+    function updateProgress() {
+
+      const completed =
+        document.querySelectorAll(
+          'input[type="radio"]:checked'
+        ).length;
+
+
+      const percentage =
+        Math.round(
+          (
+            completed / 30
+          ) * 100
+        );
+
+
+      progressFill.style.width =
+        percentage + '%';
+
+
+      progressStatus.textContent =
+        `ความคืบหน้า: ${completed} / 30 ข้อ (${percentage}%)`;
+
+    }
+
+
+    document
+      .getElementById('surveyForm')
+      .addEventListener(
+        'change',
+        updateProgress
+      );
+
+
+    /* =====================================================
+       MODAL
+       ===================================================== */
+
+    const statusModal =
+      document.getElementById(
+        'statusModal'
+      );
+
+
+    const modalIconNode =
+      document.getElementById(
+        'modalIconNode'
+      );
+
+
+    const modalHeading =
+      document.getElementById(
+        'modalHeading'
+      );
+
+
+    const modalContentText =
+      document.getElementById(
+        'modalContentText'
+      );
+
+
+    const countdownBox =
+      document.getElementById(
+        'countdownBox'
+      );
+
+
+    const countdownNotice =
+      document.getElementById(
+        'countdownNotice'
+      );
+
+
+    const modalConfirmBtn =
+      document.getElementById(
+        'modalConfirmBtn'
+      );
+
+
+    let refreshTimerInterval =
+      null;
+
+
+    let isSuccessState =
+      false;
+
+
+    let timeoutFailsafe =
+      null;
+
+
+    let isSubmitting =
+      false;
+
+
+    function displayDialog(
+      type,
+      title,
+      message,
+      isSuccess = false
+    ) {
+
+      isSuccessState =
+        isSuccess;
+
+
+      modalIconNode.className =
+        'modal-icon-container ' +
+        type;
+
+
+      if (
+        type === 'loading'
+      ) {
+
+        modalIconNode.textContent =
+          '⏳';
+
+        modalConfirmBtn.style.display =
+          'none';
+
+        countdownBox.style.display =
+          'none';
+
+      }
+
+
+      else if (
+        type === 'success'
+      ) {
+
+        modalIconNode.textContent =
+          '✓';
+
+        modalConfirmBtn.style.display =
+          'inline-block';
+
+        modalConfirmBtn.textContent =
+          'ทำแบบสอบถามต่อไป';
+
+        countdownBox.style.display =
+          'block';
+
+      }
+
+
+      else {
+
+        modalIconNode.textContent =
+          '!';
+
+        modalConfirmBtn.style.display =
+          'inline-block';
+
+        modalConfirmBtn.textContent =
+          'รับทราบ';
+
+        countdownBox.style.display =
+          'none';
+
+      }
+
+
+      modalHeading.textContent =
+        title;
+
+
+      modalContentText.textContent =
+        message;
+
+
+      statusModal.classList.add(
+        'active'
+      );
+
+
+      if (isSuccess) {
+
+        let secondsLeft =
+          4;
+
+
+        countdownNotice.textContent =
+          `ระบบจะรีเฟรชหน้าใหม่โดยอัตโนมัติใน ${secondsLeft} วินาที...`;
+
+
+        clearInterval(
+          refreshTimerInterval
+        );
+
+
+        refreshTimerInterval =
+          setInterval(
+            () => {
+
+              secondsLeft--;
+
+
+              if (
+                secondsLeft > 0
+              ) {
+
+                countdownNotice.textContent =
+                  `ระบบจะรีเฟรชหน้าใหม่โดยอัตโนมัติใน ${secondsLeft} วินาที...`;
+
+              }
+
+
+              else {
+
+                clearInterval(
+                  refreshTimerInterval
+                );
+
+                window.location.reload();
+
+              }
+
+            },
+            1000
+          );
+
+      }
+
+    }
+
+
+    function handleModalAction() {
+
+      if (
+        isSuccessState
+      ) {
+
+        clearInterval(
+          refreshTimerInterval
+        );
+
+        window.location.reload();
+
+      }
+
+      else {
+
+        statusModal.classList.remove(
+          'active'
+        );
+
+      }
+
+    }
+
+
+    /* =====================================================
+       IFRAME RESPONSE
+       ===================================================== */
+
+    const hiddenFrame =
+      document.getElementById(
+        'hiddenSubmitFrame'
+      );
+
+
+    hiddenFrame.addEventListener(
+      'load',
+      () => {
+
+        if (
+          isSubmitting
+        ) {
+
+          clearTimeout(
+            timeoutFailsafe
+          );
+
+
+          isSubmitting =
+            false;
+
+
+          document.getElementById(
+            'submitBtn'
+          ).disabled =
+            false;
+
+
+          displayDialog(
+            'success',
+            'บันทึกข้อมูลสำเร็จ',
+            'ระบบได้ดำเนินการบันทึกข้อมูลแบบสอบถามของท่านลงในฐานข้อมูลวิจัยเรียบร้อยแล้ว ขอขอบพระคุณสำหรับความร่วมมือ',
+            true
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       SUBMIT
+       ===================================================== */
+
+    document
+      .getElementById('surveyForm')
+      .addEventListener(
+        'submit',
+        event => {
+
+          event.preventDefault();
+
+
+          if (
+            !APP_CONFIG.API_ENDPOINT ||
+            APP_CONFIG.API_ENDPOINT.includes(
+              'ใส่_'
+            )
+          ) {
+
+            displayDialog(
+              'error',
+              'ข้อผิดพลาดการเชื่อมต่อ',
+              'กรุณาระบุ URL ของ Web App ในพารามิเตอร์ APP_CONFIG.API_ENDPOINT ก่อนดำเนินการ'
+            );
+
+            return;
+          }
+
+
+          /* ตรวจสอบตอนสุดท้าย */
+
+          if (
+            !validateCurrentStep()
+          ) {
+
+            return;
+          }
+
+
+          /* ตรวจสอบทุกข้อ */
+
+          for (
+            let i = 1;
+            i <= 30;
+            i++
+          ) {
+
+            if (
+              !document.querySelector(
+                `input[name="q${i}"]:checked`
+              )
+            ) {
+
+              displayDialog(
+                'error',
+                'ข้อมูลไม่ครบถ้วน',
+                `กรุณาตอบแบบประเมินให้ครบถ้วนทุกข้อ (ยังไม่ได้ระบุข้อที่ ${i})`
+              );
+
+              return;
+            }
+
+          }
+
+
+          const selectedDevices =
+            Array.from(
+              document.querySelectorAll(
+                'input[name="devices"]:checked'
+              )
+            ).map(
+              el => el.value
+            );
+
+
+          if (
+            selectedDevices.length === 0
+          ) {
+
+            displayDialog(
+              'error',
+              'ข้อมูลไม่ครบถ้วน',
+              'กรุณาเลือกอุปกรณ์ดิจิทัลที่ท่านมีหรือสามารถเข้าถึงได้อย่างน้อย 1 รายการ'
+            );
+
+            return;
+          }
+
+
+          const payloadObject =
+            {};
+
+
+          const formData =
+            new FormData(
+              document.getElementById(
+                'surveyForm'
+              )
+            );
+
+
+          formData.forEach(
+            (value, key) => {
+
+              if (
+                key === 'devices'
+              ) {
+
+                return;
+              }
+
+
+              payloadObject[key] =
+                value;
+
+            }
+          );
+
+
+          payloadObject.devices =
+            selectedDevices;
+
+
+          isSubmitting =
+            true;
+
+
+          const submitBtn =
+            document.getElementById(
+              'submitBtn'
+            );
+
+
+          submitBtn.disabled =
+            true;
+
+
+          displayDialog(
+            'loading',
+            'กำลังส่งข้อมูลสารสนเทศ',
+            'ระบบกำลังนำส่งข้อมูลเข้าสู่ฐานข้อมูลวิจัย กรุณารอสักครู่...'
+          );
+
+
+          clearTimeout(
+            timeoutFailsafe
+          );
+
+
+          timeoutFailsafe =
+            setTimeout(
+              () => {
+
+                if (
+                  isSubmitting
+                ) {
+
+                  isSubmitting =
+                    false;
+
+
+                  submitBtn.disabled =
+                    false;
+
+
+                  displayDialog(
+                    'error',
+                    'หมดเวลาการเชื่อมต่อ (Timeout)',
+                    'ระบบไม่สามารถรับการยืนยันจากฐานข้อมูลได้ กรุณาตรวจสอบสัญญาณอินเทอร์เน็ต หรือตั้งค่า URL Web App ใหม่อีกครั้ง'
+                  );
+
+                }
+
+              },
+              15000
+            );
+
+
+          const postForm =
+            document.createElement(
+              'form'
+            );
+
+
+          postForm.method =
+            'POST';
+
+
+          postForm.action =
+            APP_CONFIG.API_ENDPOINT;
+
+
+          postForm.target =
+            'hiddenSubmitFrame';
+
+
+          postForm.style.display =
+            'none';
+
+
+          const payloadInput =
+            document.createElement(
+              'input'
+            );
+
+
+          payloadInput.type =
+            'hidden';
+
+
+          payloadInput.name =
+            'payload';
+
+
+          payloadInput.value =
+            JSON.stringify(
+              payloadObject
+            );
+
+
+          postForm.appendChild(
+            payloadInput
+          );
+
+
+          document.body.appendChild(
+            postForm
+          );
+
+
+          postForm.submit();
+
+
+          postForm.remove();
+
+        }
+      );
+
+
+    /* =====================================================
+       INITIALIZE
+       ===================================================== */
+
+    showStep(0);
+
+    updateProgress();
+
+
+  </script>
+
+
+</body>
+
+</html>
